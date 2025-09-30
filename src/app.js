@@ -16,4 +16,15 @@ app.use(express.urlencoded({ limit: "16kb", extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
+// Routes
+
+import userRouter from "./routes/user.routes.js";
+
+// Route declaration
+app.use("/api/v1/user" , userRouter);
+
+app.listen(process.env.PORT, () => {
+  console.log(`Listening on port ${process.env.PORT}`);
+});
+
 export default app;
