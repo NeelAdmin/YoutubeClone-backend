@@ -24,7 +24,6 @@ const userSchema = new Schema(
     },
     coverImage: {
       type: String,
-      required: true,
     },
     watchHistory: [
       {
@@ -74,5 +73,5 @@ userSchema.methods.generateRefreshToken = function () {
   );
 };
 
-const User = mongoose.model("User", userSchema);
-export default User;
+export const User = mongoose.model("User", userSchema);
+
