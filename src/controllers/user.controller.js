@@ -191,7 +191,7 @@ const getCurrentUser = asyncHandler(async (req, res) => {
     return res.status(200).json(new ApiResponse(200, "Current user fetched successfully", req.user, true));
 })
 
-const updateAccountAccountDetail = asyncHandler(async (req, res) => {
+const updateUserAccountDetail = asyncHandler(async (req, res) => {
     const { fullName, email } = req.body;
 
 
@@ -356,4 +356,4 @@ const getUserWatchHistory = asyncHandler(async (req, res) => {
     return res.status(200).json(new ApiResponse(200, "Watch history fetched successfully", user[0].watchHistory, true));
 })
 
-export { registerUser, loginUser, logOutUser, refreshAccessToken, changeCurrentPassword, getCurrentUser, updateAccountAccountDetail, updateUserAvatar, updateUserCoverImage, getUserChannelProfile, getUserWatchHistory };   
+export { registerUser, loginUser, logOutUser, refreshAccessToken, changeCurrentPassword, getCurrentUser, updateUserAccountDetail, updateUserAvatar, updateUserCoverImage, getUserChannelProfile, getUserWatchHistory };   
