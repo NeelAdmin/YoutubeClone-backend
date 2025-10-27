@@ -125,7 +125,7 @@ const logOutUser = asyncHandler(async (req, res) => {
         secure: true,
     }
 
-    await User.findByIdAndUpdate(req.user._id, { $set: { refreshToken: undefined } }, { new: true });
+    await User.findByIdAndUpdate(req.user._id, { $unset: { refreshToken: 1 } }, { new: true });
 
     return res.status(200)
         .clearCookie("accessToken", options)
